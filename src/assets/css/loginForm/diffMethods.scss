@@ -1,0 +1,99 @@
+@mixin diffMethodStyle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .nav {
+    &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    li {
+      float: left;
+      margin-right: 20px;
+      list-style: none;
+      width: 80px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .current {
+      border-bottom: 2px solid #000;
+    }
+  }
+  .form-container {
+    padding: 20px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .options-container {
+      .el-button {
+        width: 100%;
+        height: 60px;
+        font-size: 16px;
+        background-color: rgb(60, 60, 245);
+        opacity: 0.8;
+        border: none;
+      }
+      p {
+        margin-top: 10px;
+        text-align: right;
+        color: #bbb;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@mixin diffFormStyle {
+  flex: 1;
+  .el-form-item {
+    /deep/ .el-input {
+      height: 60px;
+    }
+    /deep/.el-input__inner {
+      line-height: 60px;
+      border: none;
+      border-radius: 0;
+      border-bottom: 2px solid #ccc;
+      &:focus {
+        border-bottom: 2px solid #000;
+      }
+    }
+  }
+  .verification-code {
+    position: relative;
+    /deep/.el-input__icon {
+      line-height: 80px;
+    }
+    i {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    /deep/.el-input__inner {
+      position: absolute;
+      bottom: 0;
+    }
+    .el-button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-60%);
+      color: #000;
+      &:focus {
+        color: #ccc;
+      }
+    }
+  }
+  p {
+    font-size: 13px;
+    color: #aaa;
+    span {
+      color: rgb(0, 89, 255);
+    }
+  }
+}
